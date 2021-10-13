@@ -1,0 +1,35 @@
+<h2>Similar Movies for <em><%= @movie.title %></em></h2>  
+<table>
+  <thead>
+    <tr>
+      <th>Title</th> 
+      <th>Rating</th> 
+      <th>Release date</th> 
+      <th>Director</th> 
+      <th>More Info</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+          <td>
+              <%= movie.title %>
+          </td>
+          <td>
+              <%= movie.rating %>
+          </td>
+          <td>
+              <%= movie.release_date %>
+          </td>
+          <td>
+              <%= movie.director %>
+          </td>
+          <td>
+              <%=  link_to "More about #{movie.title}", movie_path(movie) %>
+          </td>
+      </tr>
+  </tbody>
+</table>
+  
+<%= link_to 'Back to movie list', movies_path %>
+<% end %>

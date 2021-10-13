@@ -1,4 +1,3 @@
-
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
     Movie.create movie
@@ -21,5 +20,19 @@ Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
+  end
+end
+
+# Then /the director of "(.*)" should be "(.*)"/ do |movie, director|
+#   expect(Movie.find_by_title(movie).director).to eq(director)
+# end
+
+Then /^the director of "([^"]*)" should be "([^""]*)"$/ do |movie_title, director_name|
+  if page.respond_to? :should
+    page.should have_content(movie_title)
+    page.should have_content(director_name)
+  else
+    assert page.has_content?(movie_title)
+    assert page.has_content?(director_name)
   end
 end
