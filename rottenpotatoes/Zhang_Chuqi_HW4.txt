@@ -34,5 +34,5 @@ Feature: search for movies by director
 
 3 scenarios (3 passed)
 17 steps (17 passed)
-0m0.483s
-Coverage report generated for Cucumber Features to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 42 / 55 LOC (76.36%) covered.
+0m0.576s
+Coverage report generated for Cucumber Features to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 48 / 55 LOC (87.27%) covered.
